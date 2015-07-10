@@ -179,7 +179,7 @@ describe( 'validate', function tests() {
 		var err;
 
 		err = validate( {}, {
-			'lambda': 1
+			'lambda': 1,
 			'accessor': function getValue(){},
 			'copy': false,
 			'deepset': true,

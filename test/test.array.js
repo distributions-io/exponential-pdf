@@ -30,27 +30,21 @@ describe( 'array pdf', function tests() {
 		var data, actual, expected, i;
 
 		data = [
-			1e-306,
-			-1e-306,
-			1e-299,
-			-1e-299,
-			0.8,
-			-0.8,
-			1,
 			-1,
-			10,
-			-10,
+			0,
+			0.5,
+			1,
+			1.5,
 			2,
-			-2,
-			3,
-			-3
+			2.5
 		];
 		actual = new Array( data.length );
 
 		actual = pdf( actual, data, lambda );
 
 		expected = [
-
+			0.000000000, 1.000000000, 0.606530660, 0.367879441,
+			0.223130160, 0.135335283, 0.082084999
 		];
 
 		for ( i = 0; i < actual.length; i++ ) {

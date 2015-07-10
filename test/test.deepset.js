@@ -20,7 +20,7 @@ var expect = chai.expect,
 
 describe( 'deepset pdf', function tests() {
 
-	var lambda = 1;
+	var lambda = 2;
 
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );
@@ -30,8 +30,6 @@ describe( 'deepset pdf', function tests() {
 		var data, expected, i;
 
 		data = [
-			{'x':-3},
-			{'x':-2},
 			{'x':-1},
 			{'x':0},
 			{'x':1},
@@ -42,7 +40,11 @@ describe( 'deepset pdf', function tests() {
 		data = pdf( data, lambda, 'x' );
 
 		expected = [
-
+			{'x':0},
+			{'x':2},
+			{'x':0.2706705665},
+			{'x':0.0366312778},
+			{'x':0.0049575044}
 		];
 
 		for ( i = 0; i < data.length; i++ ) {
@@ -51,8 +53,6 @@ describe( 'deepset pdf', function tests() {
 
 		// Custom separator...
 		data = [
-			{'x':[9,-3]},
-			{'x':[9,-2]},
 			{'x':[9,-1]},
 			{'x':[9,0]},
 			{'x':[9,1]},
@@ -62,7 +62,11 @@ describe( 'deepset pdf', function tests() {
 
 		data = pdf( data, lambda, 'x/1', '/' );
 		expected = [
-
+			{'x':[9,0]},
+			{'x':[9,2]},
+			{'x':[9,0.2706705665]},
+			{'x':[9,0.0366312778]},
+			{'x':[9,0.0049575044]}
 		];
 
 		for ( i = 0; i < data.length; i++ ) {
