@@ -26,7 +26,7 @@ describe( 'deepset pdf', function tests() {
 		expect( pdf ).to.be.a( 'function' );
 	});
 
-	it( 'should compute the Exponential pdf and deep set', function test() {
+	it( 'should compute the probability density function and deep set', function test() {
 		var data, expected, i;
 
 		data = [

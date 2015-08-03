@@ -127,11 +127,11 @@ describe( 'distributions-exponential-pdf', function tests() {
 		}
 	});
 
-	it( 'should compute the Exponential pdf when provided a number', function test() {
+	it( 'should compute the probability density function when provided a number', function test() {
 		assert.strictEqual( pdf( -1 ), 0 );
 	});
 
-	it( 'should evaluate the Exponential pdf when provided a plain array', function test() {
+	it( 'should evaluate the probability density function when provided a plain array', function test() {
 		var data, actual, expected, i;
 
 		data = [ -1, 0, 1, 2, 3 ];
@@ -158,7 +158,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		}
 	});
 
-	it( 'should evaluate the Exponential pdf when provided a typed array', function test() {
+	it( 'should evaluate the probability density function when provided a typed array', function test() {
 		var data, actual, expected, i;
 
 		data = new Int8Array( [ -1, 0, 1, 2, 3 ] );
@@ -189,7 +189,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		}
 	});
 
-	it( 'should evaluate the Exponential pdf element-wise and return an array of a specific type', function test() {
+	it( 'should evaluate the probability density function element-wise and return an array of a specific type', function test() {
 		var data, actual, expected;
 
 		data = [ -1, 0, 1, 2, 3 ];
@@ -206,7 +206,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
-	it( 'should evaluate the Exponential pdf element-wise using an accessor', function test() {
+	it( 'should evaluate the probability density function element-wise using an accessor', function test() {
 		var data, actual, expected, i;
 
 		var lambda = 0.5;
@@ -250,7 +250,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		}
 	});
 
-	it( 'should evaluate the Exponential pdf element-wise and deep set', function test() {
+	it( 'should evaluate the probability density function element-wise and deep set', function test() {
 		var data, actual, expected, i;
 
 		var lambda = 2;
@@ -301,7 +301,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		}
 	});
 
-	it( 'should evaluate the Exponential pdf element-wise when provided a matrix', function test() {
+	it( 'should evaluate the probability density function element-wise when provided a matrix', function test() {
 		var mat,
 			out,
 			d1,
@@ -327,7 +327,7 @@ describe( 'distributions-exponential-pdf', function tests() {
 		assert.deepEqual( mat.data, d2 );
 	});
 
-	it( 'should evaluate the Exponential pdf element-wise and return a matrix of a specific type', function test() {
+	it( 'should evaluate the probability density function element-wise and return a matrix of a specific type', function test() {
 		var mat,
 			out,
 			d1,

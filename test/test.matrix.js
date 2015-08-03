@@ -56,7 +56,7 @@ describe( 'matrix pdf', function tests() {
 		}
 	});
 
-	it( 'should evaluate the Exponential pdf for each matrix element', function test() {
+	it( 'should evaluate the probability density function for each matrix element', function test() {
 		var actual;
 
 		actual = matrix( [5,5], 'float64' );

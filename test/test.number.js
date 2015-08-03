@@ -26,7 +26,7 @@ describe( 'number pdf', function tests() {
 		expect( pdf ).to.be.a( 'function' );
 	});
 
-	it( 'should evaluate the Exponential probability density function', function test() {
+	it( 'should evaluate the probability density function', function test() {
 		assert.closeTo( pdf( 2, lambda), 2.0611536e-08, 1e-7 );
 		assert.closeTo( pdf( 20, lambda), 1.3838965e-86, 1e-7 );
 		assert.closeTo( pdf( 200, lambda), 0, 1e-7 );

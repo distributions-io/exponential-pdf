@@ -1,6 +1,6 @@
 Probability Density Function
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution probability density function (PDF).
 
@@ -47,17 +47,17 @@ out = pdf( -1 );
 
 x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 out = pdf( x );
-// returns approx. [ 1, 0.607, 0.368, 0.223, 0.135, 0.082 ]
+// returns [ 1, ~0.607, ~0.368, ~0.223, ~0.135, ~0.082 ]
 
 x = new Int8Array( x );
 out = pdf( x );
-// returns Float64Array( [1,0.607,0.368,0.223,0.135,0.082] )
+// returns Float64Array( [1,1,0.368,0.368,0.135,0.135] )
 
-x = new Int16Array( 6 );
+x = new Float64Array( 6 );
 for ( i = 0; i < 6; i++ ) {
-	x[ i ] = i*0.5;
+	x[ i ] = i * 0.5;
 }
-mat = matrix( x, [3,2], 'int16' );
+mat = matrix( x, [3,2], 'float64' );
 /*
 	[ 0  0.5
 	  1  1.5
@@ -66,9 +66,9 @@ mat = matrix( x, [3,2], 'int16' );
 
 out = pdf( mat );
 /*
-	[ 1.000 0.607 
-	  0.368 0.223 
-	  0.135 0.082 ]
+	[  1     ~0.607
+	  ~0.368 ~0.223
+	  ~0.135 ~0.082 ]
 */
 ```
 
@@ -89,7 +89,7 @@ var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 var out = pdf( x, {
 	'lambda': 3,
 });
-// returns approx. [ 3, 0.669, 0.149, 0.033, 0.007, 0.002 ]
+// returns approx. [ 3, ~0.669, ~0.149, ~0.033, ~0.007, ~0.002 ]
 ```
 
 For non-numeric `arrays`, provide an accessor `function` for accessing `array` values.
@@ -111,7 +111,7 @@ function getValue( d, i ) {
 var out = pdf( data, {
 	'accessor': getValue
 });
-// returns [ 1, 0.607, 0.368, 0.223, 0.135, 0.082 ]
+// returns [ 1, ~0.607, ~0.368, ~0.223, ~0.135, ~0.082 ]
 ```
 
 
@@ -134,11 +134,11 @@ var out = pdf( data, {
 /*
 	[
 		{'x':[0,1]},
-		{'x':[1,0.607]},
-		{'x':[2,0.368]},
-		{'x':[3,0.223]},
-		{'x':[4,0.135]},
-		{'x':[5,0.082]}
+		{'x':[1,~0.607]},
+		{'x':[2,~0.368]},
+		{'x':[3,~0.223]},
+		{'x':[4,~0.135]},
+		{'x':[5,~0.082]}
 	]
 */
 
@@ -156,7 +156,7 @@ x = new Int8Array( [0,1,2,3,4] );
 out = pdf( x, {
 	'dtype': 'float32'
 });
-// returns Int32Array( [1,0.368,0.135,0.05,0.018] )
+// returns Int32Array( [1,~0.368,~0.135,~0.05,~0.018] )
 
 // Works for plain arrays, as well...
 out = pdf( [0,0.5,1,1.5,2], {
@@ -179,16 +179,16 @@ x = [ 0, 0.5, 1, 1.5, 2 ];
 out = pdf( x, {
 	'copy': false
 });
-// returns [ 1, 0.607, 0.368, 0.223, 0.135, 0.082 ]
+// returns [ 1, ~0.607, ~0.368, ~0.223, ~0.135, ~0.082 ]
 
 bool = ( x === out );
 // returns true
 
-x = new Int16Array( 6 );
+x = new Float64Array( 6 );
 for ( i = 0; i < 6; i++ ) {
-	x[ i ] = i*0.5;
+	x[ i ] = i * 0.5;
 }
-mat = matrix( x, [3,2], 'int16' );
+mat = matrix( x, [3,2], 'float64' );
 /*
 	[ 0  0.5
 	  1  1.5
@@ -199,9 +199,9 @@ out = pdf( mat, {
 	'copy': false
 });
 /*
-	[ 1.000 0.607 
-	  0.368 0.223 
-	  0.135 0.082 ]
+	[  1     ~0.607
+	  ~0.368 ~0.223
+	  ~0.135 ~0.082 ]
 */
 
 bool = ( mat === out );
@@ -378,8 +378,8 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 [travis-image]: http://img.shields.io/travis/distributions-io/exponential-pdf/master.svg
 [travis-url]: https://travis-ci.org/distributions-io/exponential-pdf
 
-[coveralls-image]: https://img.shields.io/coveralls/distributions-io/exponential-pdf/master.svg
-[coveralls-url]: https://coveralls.io/r/distributions-io/exponential-pdf?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/distributions-io/exponential-pdf/master.svg
+[codecov-url]: https://codecov.io/codecov/distributions-io/exponential-pdf?branch=master
 
 [dependencies-image]: http://img.shields.io/david/distributions-io/exponential-pdf.svg
 [dependencies-url]: https://david-dm.org/distributions-io/exponential-pdf

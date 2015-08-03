@@ -18,7 +18,7 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'number pdf', function tests() {
+describe( 'partial', function tests() {
 
 	var lambda = 1;
 
@@ -26,7 +26,7 @@ describe( 'number pdf', function tests() {
 		expect( partial ).to.be.a( 'function' );
 	});
 
-	it( 'should partially apply the Exponential pdf for given parameter values', function test() {
+	it( 'should partially apply the probability density function for given parameter values', function test() {
 		var pdf;
 		pdf = partial( lambda);
 		expect( pdf ).to.be.a( 'function' );

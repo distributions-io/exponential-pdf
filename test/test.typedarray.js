@@ -26,7 +26,7 @@ describe( 'typed-array pdf', function tests() {
 		expect( pdf ).to.be.a( 'function' );
 	});
 
-	it( 'should evaluate the Exponential pdf', function test() {
+	it( 'should evaluate the probability density function', function test() {
 		var data, actual, expected, i;
 
 		data = new Float64Array([
