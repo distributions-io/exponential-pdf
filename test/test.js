@@ -15,7 +15,7 @@ var // Expectation library:
 	// Module to be tested:
 	pdf = require( './../lib' ),
 
-	// Error function:
+	// Evaluates pdf for a single number:
 	PDF = require( './../lib/number.js' );
 
 

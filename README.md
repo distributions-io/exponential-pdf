@@ -4,14 +4,14 @@ Probability Density Function
 
 > [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution probability density function (PDF).
 
-The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for a [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution) random variable is
+The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for an [exponential](https://en.wikipedia.org/wiki/Exponential_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="" data-equation="eq:pdf_function">
 	<img src="https://cdn.rawgit.com/distributions-io/exponential-pdf/22a8364eb27a6a2d104534d4afde85fb493511d5/docs/img/eqn.svg" alt="Probability density function (PDF) for a Exponential distribution.">
 	<br>
 </div>
 
-where `lambda` is the rate parameter.
+where `lambda > 0` is the rate parameter.
 
 ## Installation
 
@@ -30,7 +30,7 @@ var pdf = require( 'distributions-exponential-pdf' );
 
 #### pdf( x[, options] )
 
-Evaluates the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for the [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution. `x` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
+Evaluates the [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for the [exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution. `x` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
 
 ``` javascript
 var matrix = require( 'dstructs-matrix' ),
@@ -81,7 +81,7 @@ The function accepts the following `options`:
 *	__path__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path.
 *	__sep__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path separator. Default: `'.'`.
 
-A [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution is a function of 1 parameter(s): `lambda`(rate parameter). By default, `lambda` is equal to `1`. To adjust either parameter, set the corresponding option(s).
+An [exponential](https://en.wikipedia.org/wiki/Exponential_distribution) distribution is a function of one parameter: `lambda > 0`(rate parameter). By default, `lambda` is equal to `1`. To adjust it, set the corresponding option.
 
 ``` javascript
 var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];

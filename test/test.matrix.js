@@ -12,7 +12,7 @@ var // Expectation library:
 	// Module to be tested:
 	pdf = require( './../lib/matrix.js' ),
 
-	// Error function:
+	// Evaluates pdf for a single number:
 	PDF = require( './../lib/number.js' );
 
 
